@@ -1,0 +1,162 @@
+$firstDim: 770px;
+$seconDim: 540px;
+$thirDim: 467px;
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  display: flex;
+  background-color: black;
+  justify-content: space-around;
+  color: white;
+  flex-direction: column;
+  @media (min-width: $firstDim) {
+    flex-direction: row;
+    justify-content: center;
+  }
+  img:last-of-type {
+    display: none;
+    @media (min-width: $seconDim) {
+      height: 50%;
+      display: block;
+    }
+  }
+  .mobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: $seconDim) {
+      flex-direction: row;
+      &:first-of-type {
+        width: 100%;
+        align-items: unset;
+        @media (min-width: $firstDim) {
+          justify-content: space-between;
+          width: 70%;
+          max-width: 600px;
+        }
+      }
+    }
+    @media (min-width: $firstDim) {
+      &:last-of-type {
+        width: 20%;
+        justify-content: flex-start;
+        margin-left: -100px;
+      }
+    }
+  }
+    ul {
+      display: flex;
+      list-style: none;
+      padding-top: 15px;
+      color: black;
+      @media (max-width: $thirDim) {
+        padding-top: 15px;
+        font-size: 2em;
+        text-align: center;
+        color: white;
+        &:hover {
+          display: block;
+        }
+        &:hover li {
+          display: block;
+        }
+        li {
+          display: none;
+        }
+      }
+      li {
+        text-transform: uppercase;
+        padding-left: 10px;
+        color: white;
+        &:first-of-type {
+          color: aqua;
+          }
+      }
+    }
+  }
+  .header-img {
+    background: url("../img/Chocoklate_04.png") no-repeat;
+    width: 227px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 600;
+    p:first-of-type {
+      font-size: 0.75em;
+      text-indent: 50px;
+      margin-bottom: 10px;
+    }
+    p:last-of-type {
+      text-indent: 20px;
+      @media (min-width: $firstDim) {
+        text-indent: 0;
+      }
+    }
+  }
+  main {
+    background: white url("../img/Chocoklate_08.png") repeat-x;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-position-y: 186px;
+    order: 1;
+    color: white;
+    @media (min-width: $seconDim) {
+      flex-direction: row;
+      background-position-y: 0;
+      justify-content: center;
+    }
+    h1 {
+      font-weight: 700;
+    }
+    .mobile {
+      &:first-of-type {
+        padding: 10px;
+        order: 2;
+        @media (min-width: $seconDim) {
+          order: 1;
+          margin-right: -80px;
+          z-index: 1;
+          width: 100%;
+        }
+        @media (min-width: $firstDim) {
+          margin-right: -60px;
+          z-index: 1;
+          width: 40%;
+          max-width: 300px;
+        }
+      }
+      &:last-of-type {
+        display: flex;
+        order: 1;
+        overflow-x: hidden;
+        img {
+          @media (min-width: $thirDim) {
+            width: 100%;
+          }
+          @media (min-width: $seconDim) {
+            width: auto;
+            order: 2;
+          }
+        }
+      }
+     }
+    .padding {
+      display: none;
+      @media (min-width: $seconDim) {
+        display: flex;
+        width: 10%;
+      }
+    }
+  }
+
